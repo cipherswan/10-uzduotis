@@ -13,21 +13,39 @@ public class MainController {
 
     @Autowired
     private ArtistRepository artistRepository;
+    @Autowired
+    private AlbumRepository albumRepository;
 
-    @GetMapping(path = "/add")
-    public @ResponseBody String addNewArtist (@RequestParam String artistName) {
+    @GetMapping(path = "/addartist")
+    public @ResponseBody String addNewArtist (@RequestParam String name) {
 
         Artist artist = new Artist();
-        artist.setArtistName(artistName);
+        artist.setArtistName(name);
         artistRepository.save(artist);
 
         return "record saved";
     }
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = "/addalbum")
+    public @ResponseBody String addNewAlbum (@RequestParam String name) {
+
+        Album album = new Album();
+        album.setAlbumName(name);
+        albumRepository.save(album);
+
+        return "record saved";
+    }
+
+    @GetMapping(path = "/allartists")
     public @ResponseBody Iterable<Artist> getAllArtists() {
         //returns json or xml
         return artistRepository.findAll();
+    }
+
+    @GetMapping(path = "/allalbums")
+    public @ResponseBody Iterable<Album> getAllAlbums() {
+        //returns json or xml
+        return albumRepository.findAll();
     }
 
 
