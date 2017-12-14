@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Artists</title>
+</head>
+<body>
+
+    <div class="container">
+        <!--/*/ <th:block th:include="fragments/header :: header"></th:block>  /*/-->
+        <div th:if="${not #lists.isEmpty(artists)}">
+            <h2>Artist list</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                    <tr th:each="artist : $(artists)">
+                        <td th:text="${artist.name}">Artist</td>
+                    </tr>
+                </table>
+        </div>
+    </div>
+
+</body>
+</html>

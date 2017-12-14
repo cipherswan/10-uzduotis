@@ -1,5 +1,9 @@
-package lt.java.ten.uzduotis;
+package lt.java.ten.uzduotis.Controllers;
 
+import lt.java.ten.uzduotis.Entities.Album;
+import lt.java.ten.uzduotis.Entities.Artist;
+import lt.java.ten.uzduotis.Repositories.AlbumRepository;
+import lt.java.ten.uzduotis.Repositories.ArtistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,10 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller
-@RequestMapping(path= "/demo")
-public class MainController {
+//@Controller
+//@RequestMapping(path= "/demo")
+public class DeprecatedMainController {
 
+    /*
     @Autowired
     private ArtistRepository artistRepository;
     @Autowired
@@ -38,6 +43,7 @@ public class MainController {
 
     @GetMapping(path = "/allartists")
     public @ResponseBody Iterable<Artist> getAllArtists() {
+
         //returns json or xml
         return artistRepository.findAll();
     }
@@ -48,7 +54,5 @@ public class MainController {
         return albumRepository.findAll();
     }
 
-
-
-
+*/
 }
